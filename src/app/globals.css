@@ -1,26 +1,112 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cream-paper: #f5f3f0;
+  --cream-darker: #e8e4df;
+  --blueprint-blue: #1e3a8a;
+  --blueprint-light: #3b82f6;
+  --charcoal: #374151;
+  --grid-color: rgba(30, 58, 138, 0.1);
+  --background: var(--cream-paper);
+  --foreground: var(--charcoal);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-cream-paper: var(--cream-paper);
+  --color-cream-darker: var(--cream-darker);
+  --color-blueprint-blue: var(--blueprint-blue);
+  --color-blueprint-light: var(--blueprint-light);
+  --color-charcoal: var(--charcoal);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--cream-paper);
+    --foreground: var(--charcoal);
+    --grid-color: rgba(30, 58, 138, 0.1);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.blueprint-border {
+  position: relative;
+}
+
+.blueprint-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid var(--blueprint-blue);
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.structural-accent {
+  position: relative;
+}
+
+.structural-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blueprint-blue), var(--blueprint-light));
+}
+
+.paper-texture {
+  background: var(--cream-paper);
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(30, 58, 138, 0.05) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+/* Ensure all interactive elements show pointer cursor */
+button, 
+a, 
+[role="button"],
+input[type="submit"],
+input[type="button"] {
+  cursor: pointer;
+}
+
+button:hover, 
+a:hover, 
+[role="button"]:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  cursor: pointer;
 }
