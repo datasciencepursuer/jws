@@ -41,6 +41,19 @@ export default function Hero() {
 
   return (
     <section id="home" className="pt-8 paper-texture relative overflow-hidden">
+      {/* Hero Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="https://8k8m72uv0r.ufs.sh/f/moCcVTXTgXYnlpy6MBzKI28cZ5e1TgYdjy3zE4oCO0umbts6"
+          alt="Structural Engineering Background"
+          fill
+          className="object-cover opacity-10 pointer-events-none select-none"
+          style={{ userSelect: 'none', pointerEvents: 'none' }}
+          draggable={false}
+          priority
+        />
+      </div>
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10">
         <div className="text-center relative">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-blueprint-blue mb-4 structural-accent">

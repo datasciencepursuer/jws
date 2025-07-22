@@ -5,7 +5,7 @@ export default function About() {
   const { about } = contentConfig;
 
   return (
-    <section id="about" className="py-24 paper-texture relative overflow-hidden">
+    <section id="about" className="py-24 paper-texture relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-blueprint-blue mb-6 structural-accent">{about.title}</h2>
