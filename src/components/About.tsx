@@ -6,18 +6,6 @@ export default function About() {
 
   return (
     <section id="about" className="py-24 paper-texture relative overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="https://8k8m72uv0r.ufs.sh/f/moCcVTXTgXYnlpy6MBzKI28cZ5e1TgYdjy3zE4oCO0umbts6"
-          alt="Structural Engineering Background"
-          fill
-          className="object-cover opacity-15 pointer-events-none select-none"
-          style={{ userSelect: 'none', pointerEvents: 'none' }}
-          draggable={false}
-        />
-      </div>
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-blueprint-blue mb-6 structural-accent">{about.title}</h2>
